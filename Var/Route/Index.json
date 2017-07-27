@@ -1,0 +1,9 @@
+[
+    {
+        "base" : "/XPHP/",
+        "rule" : {
+            "index.html" : "Home.IndexController:index",
+            "hi/{hi}" : "Home.IndexController:Wow"
+        }
+    }
+]

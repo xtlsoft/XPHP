@@ -1,0 +1,24 @@
+{
+    "name": "xtlsoft/xdo",
+    "type": "library",
+    "description": "A fast,light Data Object for PHP",
+    "keywords": ["database","cache","upload","data"],
+    "homepage": "https://github.com/xtlsoft/XDO",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tianle Xu",
+            "email": "xtl@xtlsoft.top",
+            "homepage": "https://blog.xtlsoft.top",
+            "role": "Leader"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "XDO\\": "./"
+        }
+    }
+}

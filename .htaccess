@@ -1,0 +1,18 @@
+RewriteEngine On
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+
+RewriteRule ^.*$ index.php [L]
+
+
+#Header set Access-Control-Allow-Credentials true
+#Header set Access-Control-Allow-Methods 'GET, POST, OPTIONS'
+#Header set Access-Control-Max-Age 1728000
+#Header set Access-Control-Allow-Headers 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type'
+#Header set Access-Control-Allow-Origin *

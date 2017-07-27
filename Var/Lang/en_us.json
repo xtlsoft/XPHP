@@ -1,0 +1,11 @@
+{
+    "System" : {
+        
+        "Error" : "Error",
+        "WeHadRecordThisError" : "We had record this error. Sorry!",
+        "jumpNow" : "Jump Now",
+        "SecondsAfterAutoJump" : "Seconds Left to jump",
+        "BackHome" : "Goto Homepage"
+        
+    }
+}
