@@ -13,7 +13,7 @@
     use XDO\XDO;
     
     define("X",true);
-    define("XPHP_VERSION","0.1.0-alpha");
+    define("XPHP_VERSION","0.1.1-alpha");
     define("SysDir",dirname(__FILE__).'/');
     define("LibDir",SysDir.'Lib/');
     define("AppDir",SysDir.'App/');
@@ -22,8 +22,7 @@
     define("DatDir",SysDir.'Var/Data/');
     define("RouteDir",SysDir.'Var/Route/');
     
-    $GLOBALS['_C']['Template'] = "default";
-    $GLOBALS['_C']['Language'] = "zh_cn";
+    require(SysDir. 'Config.php');
     
     require(LibDir.'X/Autoloader.php');
     

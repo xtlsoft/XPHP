@@ -19,7 +19,7 @@
         public static function load($file){
             if(!self::$isLoad){
                 $_G = array();
-                $_G['REQUEST_URI'] = explode("?",$_SERVER['REQUEST_URI'])[0];
+                $_G['REQUEST_URI'] = substr(explode("?",$_SERVER['REQUEST_URI'])[0], strlen($GLOBALS['_C']['RouteBase']));
                 $arr = json_decode(file_get_contents($file),1);
                 foreach($arr as $v){
                     $count = strlen($v['base']);
