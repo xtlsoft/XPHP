@@ -13,9 +13,9 @@
     use X\Route;
     
     class App{
-        public static function Run($Plugin,$Controller,$Action,$var){
-            $File = PluginDir.$Plugin."/Controller/".$Controller.".class.php";
-            $namespace = "Controller\\$Plugin\\";
+        public static function Run($Application,$Controller,$Action,$var){
+            $File = AppDir.$Application."/Controller/".$Controller.".class.php";
+            $namespace = "Controller\\$Application\\";
             include($File);
             if(!class_exists($namespace.$Controller)){
                 Error::HTTP_E(404);
