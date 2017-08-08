@@ -7,11 +7,11 @@
     
     namespace X;
     
-    use X\Glob;
     use X\Error;
     use X\View;
+    use X\Route;
     
-    class Controller{
+    abstract class Controller{
         public $Data = array();
         
         public final function View($viewName){
@@ -20,4 +20,20 @@
             $tpl->show();
             return $tpl;
         }
+        
+        public final function Json($echo=1){
+            $json = json_encode($this->Data);
+            if($echo) echo $json;
+            return $json;
+        }
+        
+        public final function Model($model, $args=""){
+            $e = 'return new \\Model\\';
+            $e .= Route::$Application;
+            $e .= '\\';
+            $e .= $model;
+            $e .= '('.$args.');';
+            return eval($e);
+        }
+        
     }

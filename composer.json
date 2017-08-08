@@ -1,0 +1,20 @@
+{
+    "name": "xtlsoft/xphp",
+    "description": "A Simple PHP Framework",
+    "type": "project",
+    "require": {
+        "php": ">=5.4",
+        "xtlsoft/xdo": "^0.1.2",
+        "ircmaxell/filterus": "^1.0",
+        "j4mie/idiorm": "^1.5",
+        "monolog/monolog": "^1.23",
+        "phpmailer/phpmailer": "^5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xtlsoft",
+            "email": "xtlsoft@126.com"
+        }
+    ]
+}

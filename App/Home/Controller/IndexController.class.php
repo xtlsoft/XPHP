@@ -22,7 +22,7 @@
         
         public function Wow($var){
             
-            echo $var['hi'];
+            return $this->Json($var);
             
         }
         
