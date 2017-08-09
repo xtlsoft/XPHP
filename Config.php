@@ -10,3 +10,21 @@
             "ERROR" => SysDir.'Var/Log/error.log'
         );
     
+    $GLOBALS['_C']['enableORM'] = true; //开启ORMDB
+    //-----------------ORMDB MySQL Example-----------------
+    $GLOBALS['_C']['ORMDB'] = array( //ORM数据库配置 ORMDB Configure
+            'connection_string' => 'mysql:host=localhost;dbname=xphp;charset=utf8', //DSN
+            'driver_options'    => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'), //PDO Option
+            'username'          => 'root', //用户名 username
+            'password'          => '', //密码 password
+            'logging'           => true, //开启Query日志 Enable Query Log
+            'caching'           => true, //开启缓存 Enalble Cache
+            'caching_auto_clear'=> true //自动清理缓存 Auto Clear Cache
+        );
+    //-----------------ORMDB SQLite Example-----------------
+    // $GLOBALS['_C']['ORMDB'] = array( //ORM数据库配置 ORMDB Configure
+    //         'connection_string' => 'sqlite:'.DatDir.'xphp.db', //DSN
+    //         'logging'           => true //开启Query日志 Enable Query Log
+    //         'caching'           => true, //开启缓存 Enalble Cache
+    //         'caching_auto_clear'=> true //自动清理缓存 Auto Clear Cache
+    //     );

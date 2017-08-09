@@ -27,11 +27,12 @@
             return $json;
         }
         
-        public final function Model($model, $args=""){
+        public final function Model($model, $args=array()){
             $e = 'return new \\Model\\';
             $e .= Route::$Application;
             $e .= '\\';
             $e .= $model;
+            $args = implode(", ", $args);
             $e .= '('.$args.');';
             return eval($e);
         }

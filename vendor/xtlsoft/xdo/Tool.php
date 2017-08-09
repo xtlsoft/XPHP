@@ -40,5 +40,20 @@
             rmdir($path);
             return true;
         }
+        public static function genSalt($length, $arr){
+            $s = "";
+            for($i=0; $i<$length; ++$i){
+                $n = rand(0, (count($arr)-1));
+                $s .= $arr[$n][rand(0, (count($arr[$n])-1))];
+            }
+            return $s;
+        }
+        public static function genFileName(){
+            $name = "";
+            $name .= date("Y/m/d/hi-");
+            $name .= self::genSalt(15, array(range('0','9'), range('a','z'), range('A','Z')));
+            $name .= ".dat";
+            return $name;
+        }
         
     }

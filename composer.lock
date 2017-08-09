@@ -319,16 +319,16 @@
         },
         {
             "name": "xtlsoft/xdo",
-            "version": "v0.1.2-stable",
+            "version": "v0.1.3-stable",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtlsoft/XDO.git",
-                "reference": "021e781d650a66b168610b4f55e028f7474e97ef"
+                "reference": "02fd4210cb9e6a00b7fa000cc3ae69c3aa43506f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtlsoft/XDO/zipball/021e781d650a66b168610b4f55e028f7474e97ef",
-                "reference": "021e781d650a66b168610b4f55e028f7474e97ef",
+                "url": "https://files.phpcomposer.com/files/xtlsoft/XDO/02fd4210cb9e6a00b7fa000cc3ae69c3aa43506f.zip",
+                "reference": "02fd4210cb9e6a00b7fa000cc3ae69c3aa43506f",
                 "shasum": ""
             },
             "require": {
@@ -360,7 +360,7 @@
                 "database",
                 "upload"
             ],
-            "time": "2017-08-06T23:20:08+00:00"
+            "time": "2017-08-08T05:48:50+00:00"
         }
     ],
     "packages-dev": [],
