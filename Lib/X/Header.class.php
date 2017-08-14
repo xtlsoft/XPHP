@@ -35,7 +35,7 @@
                     $stxt = "Not Modified";
                     break;
                 case 500:
-                $stxt = "Internal Server Error";
+                    $stxt = "Internal Server Error";
                     break;
                 case 503:
                     $stxt = "Service Unavailable";

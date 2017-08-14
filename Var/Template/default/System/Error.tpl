@@ -32,7 +32,7 @@
                 window.setTimeout("window.location.href='{{$jump}}';",{{$sec}}*1000);
             </script>
         {{# }else{ }}
-            <a href='/'>{{$L['System']['BackHome']}}</a>
+            <a href='{{$GLOBALS['_C']['RouteBase']}}'>{{$L['System']['BackHome']}}</a>
         {{# } }}
     </body>
 </html>
