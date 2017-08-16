@@ -23,8 +23,8 @@
     /*--- Define Path And Version ---*/
     ##################################
     define("X",true); //Make sure you are in XPHP
-    define("XPHP_VERSION","0.1.1-alpha"); //XPHP Version
-    define("SysDir",dirname(__FILE__).'/'); //XPHP Base Directory
+    define("XPHP_VERSION","0.3.0-alpha"); //XPHP Version
+    define("SysDir",dirname(__DIR__).'/'); //XPHP Base Directory
     define("LibDir",SysDir.'Lib/'); //XPHP Embedded Library Directory
     define("AppDir",SysDir.'App/'); //XPHP Application Directory
     define("TemplateDir",SysDir.'Var/Template/'); //XPHP Template Directory
@@ -53,6 +53,9 @@
     
     //Init the session (Actions with session could do in Config.php)
     @session_start();
+    
+    //Do Prepare Functions
+    App::Prepare();
     
     //Set XDO Dir
     XDO::setDir(DatDir);

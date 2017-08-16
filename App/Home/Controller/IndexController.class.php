@@ -9,7 +9,6 @@
     
     use X\Controller;
     use X\Log;
-    use Model\Home\IndexModel;
     
     class IndexController extends Controller{
         public function index(){
@@ -61,3 +60,4 @@
         }
         
     }
+    

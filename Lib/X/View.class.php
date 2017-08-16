@@ -42,7 +42,8 @@
             $torp = array("<?php",    "<?=",      "?>" );
             $this->tplFile = str_replace($rpl,$torp,$this->tplFile);
             $preEval = '$L = self::lang($GLOBALS["_C"]["Language"]);
-$TplDir = TemplateDir.$GLOBALS["_C"]["Template"]."/";
+$Base = $GLOBALS["_C"]["RouteBase"]."/";
+$StaticDir = $Base . "Static/" . $GLOBALS["_C"]["Template"] . "/2";
 foreach($this->vars as $k=>$v){
     eval("\$".$k." = \$v;");
 }?>';

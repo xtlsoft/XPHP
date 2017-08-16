@@ -28,4 +28,12 @@
                 Error::HTTP_E(404);
             }
         }
+        public static function Prepare(){
+            
+            global $_C;
+            if(substr($_C['RouteBase'],(strlen($_C['RouteBase'])-1), 1) == "/"){
+                $_C['RouteBase'] = substr($_C['RouteBase'], 0, (strlen($_C['RouteBase'])-1));
+            }
+            
+        }
     }
