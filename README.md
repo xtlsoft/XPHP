@@ -18,3 +18,18 @@ XPHP是一个轻便，简单的PHP框架。
 Now only zh_cn Document avalible.
 目前只有中文文档。
 http://www.kancloud.cn/xtlsoft/xphp-doc/content/
+
+## Installation 安装
+Please go to the Releases Page to Download.
+
+请到 Releases 页面下载。
+
+https://github.com/xtlsoft/XPHP/releases
+
+
+
+如果您使用0.3.x的XPHP，在nginx中，他必须处于站点根目录。在apache中，没有这个限制。网站的根无论指向根目录或`Public`目录都是被允许的。
+如果使用nginx，伪静态配置样例已经附在了`nginx.conf`下。如果`root`指向根目录，请用根目录下的；指向`Public`目录，请用`Public`目录下的。
+
+If you are using Version 0.3.x, You could only put XPHP in the siteroot in nginx, but anywhere you like in apache. You can point the website root both to `/` or `/Public/`.
+If you are using nginx, we provide a Example rewrite configure. It's in a file which named `nginx.conf`. If your point your root to `/`, please use `/nginx.conf`; if you point your root to `/Public/`, please use `/Public/nginx.conf`.
