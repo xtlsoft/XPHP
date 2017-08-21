@@ -21,8 +21,14 @@
             return $tpl;
         }
         
-        public final function Json($echo=1){
-            $json = json_encode($this->Data);
+        public final function Json($json=null, $echo=1){
+            
+            if($json === null){
+                $json = $this->Data;
+            }
+            
+            $json = json_encode($json);
+            
             if($echo) echo $json;
             return $json;
         }
@@ -32,8 +38,17 @@
             $e .= Route::$Application;
             $e .= '\\';
             $e .= $model;
-            $args = implode(", ", $args);
-            $e .= '('.$args.');';
+            //$args = implode(", ", $args);
+            $GLOBALS['_TMP_']['_XPHP_MODEL_CALL_TMP'] = $args;
+            $str = "";
+            foreach($args as $k=>$v){
+                $str .= "\$GLOBALS['_TMP_']['_XPHP_MODEL_CALL_TMP'][$k]";
+                if($k < (count($args)-1)){
+                    $str .= ", ";
+                }
+            }
+            $e .= '('.$str.');';
+            
             return eval($e);
         }
         

@@ -1,0 +1,7 @@
+[2017-08-21 11:03:37] XPHP.ERROR: #42S02: 未处理异常：SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xphp.x\model' doesn't exist in C:\web\wwwroot\vhost\www.xtlsoft.top\XPHP\vendor\j4mie\idiorm\idiorm.php line 503 [] []
+[2017-08-21 11:03:53] XPHP.ERROR: #42S02: 未处理异常：SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xphp.x\model' doesn't exist in C:\web\wwwroot\vhost\www.xtlsoft.top\XPHP\vendor\j4mie\idiorm\idiorm.php line 503 [] []
+[2017-08-21 11:04:27] XPHP.ERROR: #42S02: 未处理异常：SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xphp.x\model' doesn't exist in C:\web\wwwroot\vhost\www.xtlsoft.top\XPHP\vendor\j4mie\idiorm\idiorm.php line 503 [] []
+[2017-08-21 11:04:32] XPHP.ERROR: #42S02: 未处理异常：SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xphp.x\model' doesn't exist in C:\web\wwwroot\vhost\www.xtlsoft.top\XPHP\vendor\j4mie\idiorm\idiorm.php line 503 [] []
+[2017-08-21 11:04:38] XPHP.ERROR: #42S02: 未处理异常：SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xphp.x\model' doesn't exist in C:\web\wwwroot\vhost\www.xtlsoft.top\XPHP\vendor\j4mie\idiorm\idiorm.php line 503 [] []
+[2017-08-21 11:05:22] XPHP.ERROR: #42S02: 未处理异常：SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xphp.x\model' doesn't exist in C:\web\wwwroot\vhost\www.xtlsoft.top\XPHP\vendor\j4mie\idiorm\idiorm.php line 503 [] []
+[2017-08-21 11:06:03] XPHP.ERROR: HTTP 404 Not Found IN /XPHP/hi/ AT www.xtlsoft.top:80 REMOTE 49.67.243.134:35248 [] []

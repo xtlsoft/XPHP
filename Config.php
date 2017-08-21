@@ -10,6 +10,9 @@
             "ERROR" => SysDir.'Var/Log/error.log'
         );
     
+    $GLOBALS['_C']['View']['Start'] = "{{";
+    $GLOBALS['_C']['View']['End'] = "}}";
+    
     $GLOBALS['_C']['enableORM'] = true; //开启ORMDB
     //-----------------ORMDB MySQL Example-----------------
     $GLOBALS['_C']['ORMDB'] = array( //ORM数据库配置 ORMDB Configure

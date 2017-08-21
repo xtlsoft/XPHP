@@ -38,12 +38,12 @@
                 echo json_encode($this->vars);
                 return;
             }
-            $rpl  = array("{{#"  ,    "{{" ,      "}}" );
-            $torp = array("<?php",    "<?=",      "?>" );
+            $rpl  = array($GLOBALS['_C']['View']['Start']."#", $GLOBALS['_C']['View']['Start'], $GLOBALS['_C']['View']['End']);
+            $torp = array("<?php",                             "<?=",                           "?>" );
             $this->tplFile = str_replace($rpl,$torp,$this->tplFile);
             $preEval = '$L = self::lang($GLOBALS["_C"]["Language"]);
 $Base = $GLOBALS["_C"]["RouteBase"]."/";
-$StaticDir = $Base . "Static/" . $GLOBALS["_C"]["Template"] . "/2";
+$StaticDir = $Base . "Static/" . $GLOBALS["_C"]["Template"] . "/";
 foreach($this->vars as $k=>$v){
     eval("\$".$k." = \$v;");
 }?>';

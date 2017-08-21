@@ -40,8 +40,15 @@
         }
         
         public function __call($name, $arg){
-            $arg = implode(', ', $arg);
-            return eval("return \$this->ORM->{$name}({$arg});");
+            $GLOBALS['_TMP_']['_XPHP_MODEL_CALL_TMP'] = $arg;
+            $str = "";
+            foreach($arg as $k=>$v){
+                $str .= "\$GLOBALS['_TMP_']['_XPHP_MODEL_CALL_TMP'][$k]";
+                if($k < (count($arg)-1)){
+                    $str .= ", ";
+                }
+            }
+            return eval("return \$this->ORM->{$name}({$str});");
         }
         
     }
