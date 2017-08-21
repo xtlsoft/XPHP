@@ -23,7 +23,7 @@
     /*--- Define Path And Version ---*/
     ##################################
     define("X",true); //Make sure you are in XPHP
-    define("XPHP_VERSION","0.3.0-alpha"); //XPHP Version
+    define("XPHP_VERSION","0.3.1-stable"); //XPHP Version
     define("SysDir",dirname(__DIR__).'/'); //XPHP Base Directory
     define("LibDir",SysDir.'Lib/'); //XPHP Embedded Library Directory
     define("AppDir",SysDir.'App/'); //XPHP Application Directory
