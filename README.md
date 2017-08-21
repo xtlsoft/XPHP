@@ -1,5 +1,8 @@
 # XPHP
 
+[![License](https://poser.pugx.org/xtlsoft/xphp/license)](https://packagist.org/packages/xtlsoft/xphp)
+[![Latest Stable Version](https://poser.pugx.org/xtlsoft/xphp/v/stable)](https://packagist.org/packages/xtlsoft/xphp)
+[![Require PHP Version](https://img.shields.io/badge/PHP-5.4+-blue.svg)](https://php.net)
 [![MadeWithLove](https://img.shields.io/badge/Made%20with-love-yellowgreen.svg)](https://blog.xtlsoft.top)
 
 XPHP is a light, easy PHP framework.
