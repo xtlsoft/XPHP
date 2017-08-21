@@ -1,4 +1,11 @@
 # XPHP
+
+[![License](https://poser.pugx.org/xtlsoft/xphp/license)](https://packagist.org/packages/xtlsoft/xphp)
+[![Latest Stable Version](https://poser.pugx.org/xtlsoft/xphp/v/stable)](https://packagist.org/packages/xtlsoft/xphp)
+[![Require PHP Version](https://img.shields.io/badge/PHP-5.4+-blue.svg)](https://php.net)
+[![Build Status](https://travis-ci.org/xtlsoft/XPHP.svg?branch=master)](https://travis-ci.org/xtlsoft/XPHP)
+[![MadeWithLove](https://img.shields.io/badge/Made%20with-love-yellowgreen.svg)](https://blog.xtlsoft.top)
+
 XPHP is a light, easy PHP framework.
 XPHP是一个轻便，简单的PHP框架。
 
@@ -26,7 +33,7 @@ Please go to the Releases Page to Download.
 
 https://github.com/xtlsoft/XPHP/releases
 
-
+对于中国用户，我们提供了一个高速镜像：https://git.xapps.top/xtlsoft/XPHP
 
 如果您使用0.3.x的XPHP，在nginx中，他必须处于站点根目录。在apache中，没有这个限制。网站的根无论指向根目录或`Public`目录都是被允许的。
 如果使用nginx，伪静态配置样例已经附在了`nginx.conf`下。如果`root`指向根目录，请用根目录下的；指向`Public`目录，请用`Public`目录下的。
