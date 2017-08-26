@@ -21,7 +21,7 @@
             'username'          => 'root', //用户名 username
             'password'          => '', //密码 password
             'logging'           => true, //开启Query日志 Enable Query Log
-            'caching'           => true, //开启缓存 Enalble Cache
+            'caching'           => true, //开启缓存 Enable Cache
             'caching_auto_clear'=> true //自动清理缓存 Auto Clear Cache
         );
     //-----------------ORMDB SQLite Example-----------------
