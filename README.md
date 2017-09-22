@@ -9,6 +9,9 @@
 XPHP is a light, easy PHP framework.
 XPHP是一个轻便，简单的PHP框架。
 
+## Tip 提示
+XPHP will release a new version these months. The version must have a lot of changes. It will merge some features in Rqo. I compared more frameworks and had lots of thoughts, so it'll take me some time to write the code.
+
 ## Features 特性
 - Use Composer and Archive-Library-Install together. 一起使用Composer和传统归档库管理。
 - Light but Strong, Fast but Good. 轻便但强壮，快速但不少功能。
