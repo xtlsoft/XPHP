@@ -13,12 +13,16 @@
      * @link https://github.com/xtlsoft/XPHP
      * 
      */
-
-    namespace \;
-
-    class Constant {
-
-        const VERSION = "1.0.0-alpha";
-        
+    
+    if(!defined("X")){
+    
+        /**
+         * The base directory the system in.
+         */
+        define("SysDir", dirname(__DIR__));
+        /**
+         * The version constant.
+         */
+        define("X", "1.0.0-alpha");
 
     }
