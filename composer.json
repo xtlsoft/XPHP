@@ -1,21 +1,35 @@
 {
     "name": "xtlsoft/xphp",
-    "description": "A Simple PHP Framework",
-    "version": "0.3.1-stable",
+    "description": "Wonderful & high-performance PHP classic framework.",
+    "version": "1.0.0-alpha",
     "type": "project",
     "require": {
         "php": ">=5.4",
-        "xtlsoft/xdo": "^0.1.2",
         "ircmaxell/filterus": "^1.0",
         "j4mie/idiorm": "^1.5",
         "monolog/monolog": "^1.23",
-        "phpmailer/phpmailer": "^5.2"
+        "league/event": "^2.1"
     },
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "X\\": "Lib/X/"
+        },
+        "psr-0": {
+            "": "Lib/"
+        },
+        "files": [
+            "Lib/Constant.php"
+        ]
+    },
     "authors": [
         {
-            "name": "xtlsoft",
-            "email": "xtlsoft@126.com"
+            "name": "Tianle Xu",
+            "email": "xtl@xtlsoft.top"
+        },
+        {
+            "name": "Dawn",
+            "email": "i@lim-light.com"
         }
     ]
 }

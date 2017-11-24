@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'X\\' => array($baseDir . '/Lib/X'),
     'XDO\\' => array($vendorDir . '/xtlsoft/xdo'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'League\\Event\\' => array($vendorDir . '/league/event/src'),
 );

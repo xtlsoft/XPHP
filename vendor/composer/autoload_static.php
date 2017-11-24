@@ -8,11 +8,13 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
 {
     public static $files = array (
         'a7430ded26095af01b44526469290d97' => __DIR__ . '/..' . '/ircmaxell/filterus/lib/Filterus/functions.php',
+        '6c5ea123ce0d2bc617279380b83c7384' => __DIR__ . '/../..' . '/Lib/Constant.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'X' => 
         array (
+            'X\\' => 2,
             'XDO\\' => 4,
         ),
         'P' => 
@@ -23,9 +25,17 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         array (
             'Monolog\\' => 8,
         ),
+        'L' => 
+        array (
+            'League\\Event\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'X\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Lib/X',
+        ),
         'XDO\\' => 
         array (
             0 => __DIR__ . '/..' . '/xtlsoft/xdo',
@@ -38,6 +48,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'League\\Event\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/event/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -48,6 +62,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
                 0 => __DIR__ . '/..' . '/ircmaxell/filterus/lib',
             ),
         ),
+    );
+
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/../..' . '/Lib',
     );
 
     public static $classMap = array (
@@ -72,6 +90,7 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
             $loader->prefixLengthsPsr4 = ComposerStaticInit422bc125ab9b845f3949640018b561a3::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit422bc125ab9b845f3949640018b561a3::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit422bc125ab9b845f3949640018b561a3::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit422bc125ab9b845f3949640018b561a3::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInit422bc125ab9b845f3949640018b561a3::$classMap;
 
         }, null, ClassLoader::class);

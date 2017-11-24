@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Filterus' => array($vendorDir . '/ircmaxell/filterus/lib'),
+    '' => array($baseDir . '/Lib'),
 );
