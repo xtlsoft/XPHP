@@ -10,7 +10,11 @@ XPHP is a light, easy PHP framework.
 XPHP是一个轻便，简单的PHP框架。
 
 ## Tip 提示
-XPHP will release a new version these months. The version must have a lot of changes. It will merge some features in Rqo. I compared more frameworks and had lots of thoughts, so it'll take me some time to write the code.
+Please don't clone the master branch directly, because the version 1.0.0 is still developing.
+You can download the 0.3.0 of XPHP here: https://github.com/xtlsoft/XPHP/releases/
+
+请勿直接clone主分支，因为1.0.0版还在开发。
+你可以从此处下载XPHP的0.3.0版：https://github.com/xtlsoft/XPHP/releases/
 
 ## Features 特性
 - Use Composer and Archive-Library-Install together. 一起使用Composer和传统归档库管理。
