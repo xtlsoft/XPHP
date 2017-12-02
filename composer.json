@@ -8,7 +8,9 @@
         "ircmaxell/filterus": "^1.0",
         "j4mie/idiorm": "^1.5",
         "monolog/monolog": "^1.23",
-        "league/event": "^2.1"
+        "league/event": "^2.1",
+        "league/container": "^2.4",
+        "league/booboo": "^2.0"
     },
     "license": "MIT",
     "autoload": {

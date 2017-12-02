@@ -20,6 +20,7 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
         ),
         'M' => 
         array (
@@ -28,6 +29,12 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'L' => 
         array (
             'League\\Event\\' => 13,
+            'League\\Container\\' => 17,
+            'League\\BooBoo\\' => 14,
+        ),
+        'I' => 
+        array (
+            'Interop\\Container\\' => 18,
         ),
     );
 
@@ -44,6 +51,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -51,6 +62,18 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'League\\Event\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/event/src',
+        ),
+        'League\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/container/src',
+        ),
+        'League\\BooBoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/booboo/src',
+        ),
+        'Interop\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
     );
 

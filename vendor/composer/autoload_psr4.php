@@ -9,6 +9,10 @@ return array(
     'X\\' => array($baseDir . '/Lib/X'),
     'XDO\\' => array($vendorDir . '/xtlsoft/xdo'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Event\\' => array($vendorDir . '/league/event/src'),
+    'League\\Container\\' => array($vendorDir . '/league/container/src'),
+    'League\\BooBoo\\' => array($vendorDir . '/league/booboo/src'),
+    'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
 );
