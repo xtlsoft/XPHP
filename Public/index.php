@@ -35,11 +35,14 @@
             "Route"       => "Var/Route/",
             "Application" => "App/",
             "Template"    => "Var/Template/",
+            "Cache"       => "Var/Cache/"
         ], 
         "View"    => [
             "Start"    => "{{",
             "End"      => "}}",
-            "Template" => "default"
+            "ExtName"  => ".tpl",
+            "Template" => "default",
+            "Cache"    => false
         ],
         "Route"   => [
             "Base"     => ""

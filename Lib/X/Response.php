@@ -50,23 +50,25 @@
          * @return void
          * 
          */
-        public function __construct($code=200){
+        public function __construct($code = 200, $header = [], $content = ""){
             
             $this->status = $code;
+            $this->header = new \X\Header($header);
+            $this->content = $content;
             
         }
         
         /**
          * Set Header
          * 
-         * @param \Rqo\Http\Header The Header Object.
+         * @param \X\Header The Header Object.
          * 
          * @return self   
          * 
          */
-        public function header(\X\Header $header){
+        public function header($a, $b = ""){
             
-            $this->header = $header->dump();
+            $this->header->set($a, $b);
             
             return $this;
             
@@ -95,7 +97,8 @@
          * 
          */
         public function dump(){
-            
+            if($this->header instanceof \X\Header)
+                $this->header = $this->header->dump();
             return $this;
             
         }

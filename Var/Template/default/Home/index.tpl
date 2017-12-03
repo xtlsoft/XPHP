@@ -1,11 +1,12 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>{{ $L['Index']['WelcomeTo'] }} XPHP!</title>
+        <title>{{ welcome }} XPHP!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     </head>
     <body>
-        
+        {{&include "Home/test"}}
+        {{{include "Home/test"}}}
         <style>
             body{
                 margin:0;
@@ -35,7 +36,7 @@
                 <td><h1>XPHP</h1></td>
             </tr>
             <tr valign="middle" align="center">
-                <td><h3>Version {{ $Version }}</h3></td>
+                <td><h3>Version {{ version }}</h3></td>
             </tr>
         </table>
         

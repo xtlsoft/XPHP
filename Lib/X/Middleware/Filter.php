@@ -32,13 +32,11 @@
                 <hr />
                 <i><h3 align=\"center\">Powered By XPHP</h3></i>
             ");
-            $header = $response->header + [
+            $response->header([
                 "content-type" => "text/html",
                 "x-powered-byme" => "xphp/" . X,
                 "x-time"       => date('Y-m-d h:i:s')
-            ];
-
-            $response->header = $header;
+            ]);
 
         }
 

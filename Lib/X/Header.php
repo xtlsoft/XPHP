@@ -56,6 +56,12 @@
          */
         public function set($name, $value){
             
+            if(is_array($name)){
+                $this->__construct($name);
+
+                return $this;
+            }
+
             $this->header[$name] = $value;
             
             return $this;

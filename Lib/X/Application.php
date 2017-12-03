@@ -21,7 +21,7 @@
         protected $handler;
         public $container;
         public $event;
-        protected $config;
+        public $config;
         public $route;
         protected $request;
 
@@ -87,12 +87,13 @@
 
             if(!$this->container->has($name))
                 $this->container->add($name);
-            $this->container->get($name);
+            return $this->container->get($name);
 
         }
 
         public function controllerAsCallback($name){
-            return function(\X\Request $req) use ($name){
+            $instance = $this;
+            return function(\X\Request $req) use ($name, $instance){
                 $name = explode(":", $name);
                 $cls = $name[0]; $method = $name[1];
                 $cls = explode(".", $cls);
@@ -103,7 +104,7 @@
                 
                 include($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
 
-                $obj = eval("return new $class();");
+                $obj = $instance->boot($class);
 
                 return call_user_func([$obj, $method], $req);
             };
