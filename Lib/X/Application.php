@@ -101,7 +101,7 @@
                 $class = "\\Controller\\" . $app . "\\" . $con;
                 $file = $app . "/Controller/" . $con . ".class.php";
                 
-                @include($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
+                include($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
 
                 $obj = eval("return new $class();");
 

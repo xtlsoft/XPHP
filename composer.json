@@ -10,7 +10,7 @@
         "monolog/monolog": "^1.23",
         "league/event": "^2.1",
         "league/container": "^2.4",
-        "league/booboo": "^2.0"
+        "filp/whoops": "^2.1"
     },
     "license": "MIT",
     "autoload": {

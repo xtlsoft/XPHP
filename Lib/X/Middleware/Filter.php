@@ -21,7 +21,7 @@
         public function handle($event, \X\Request $request){
 
             $j = $request->getArray();
-            $j['data']['get']['something'] = base64_encode($j['data']['get']['something']);
+            @$j['data']['get']['something'] = base64_encode($j['data']['get']['something']);
             $request->set($j);
 
         }

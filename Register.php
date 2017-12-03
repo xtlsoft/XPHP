@@ -8,13 +8,17 @@
 
     return function ($App) {
         
-        $App->container->add('Core.Error', '\League\BooBoo\BooBoo')->
-            withArgument(new League\Container\Argument\RawArgument([]))->
-            withMethodCall('pushFormatter', ['Core.Error.Formatter'])->
+        $App->container->add('Core.Error', '\Whoops\Run')->
+            withMethodCall('pushHandler', ['Core.Error.Handler'])->
+            withMethodCall('pushHandler', [new \League\Container\Argument\RawArgument(function(
+                $exception, $inspector, $run
+            ) use ($App){
+                $App->event->emit('Core.Error', $exception, $inspector, $run);
+            })])->
             withMethodCall('register', []);
 
         $App->addBatch([
-            ['Core.Error.Formatter', '\League\BooBoo\Formatter\HtmlTableFormatter'],
+            ['Core.Error.Handler', '\Whoops\Handler\PrettyPageHandler'],
             ['Core.Route', '\X\Route'],
             ['Core.Log',   '\X\Log']
         ]);

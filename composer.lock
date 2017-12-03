@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3c8d96d4c447e8b5911ccc90ff893f8",
+    "content-hash": "6c75a3f3280e5b6bc43c6bf4baad34d4",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -36,6 +36,67 @@
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
             "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "filp/whoops",
+            "version": "2.1.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/filp/whoops/c6081b8838686aa04f1e83ba7e91f78b7b2a23e6.zip",
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0",
+                "psr/log": "^1.0.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "symfony/var-dumper": "^2.6 || ^3.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
+                "whoops/soap": "Formats errors as SOAP responses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whoops\\": "src/Whoops/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://filp.github.io/whoops/",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "throwable",
+                "whoops"
+            ],
+            "time": "2017-11-23T18:22:44+00:00"
         },
         {
             "name": "ircmaxell/filterus",
@@ -145,51 +206,6 @@
                 "query builder"
             ],
             "time": "2017-03-21T01:31:25+00:00"
-        },
-        {
-            "name": "league/booboo",
-            "version": "2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/booboo.git",
-                "reference": "bf6a7ba3b3cb59cf1acec1e8671474bde5ffe326"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/thephpleague/booboo/bf6a7ba3b3cb59cf1acec1e8671474bde5ffe326.zip",
-                "reference": "bf6a7ba3b3cb59cf1acec1e8671474bde5ffe326",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0",
-                "psr/log": "~1.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~5.7",
-                "sentry/sentry": "~1.7"
-            },
-            "suggest": {
-                "sentry/sentry": "Use Sentry for passing errors to Sentry."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "League\\BooBoo\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brandon Savage",
-                    "homepage": "https://www.brandonsavage.net/"
-                }
-            ],
-            "description": "Provides an error handler for PHP that can execute a stack of handlers for various purposes.",
-            "time": "2017-09-01T17:05:28+00:00"
         },
         {
             "name": "league/container",

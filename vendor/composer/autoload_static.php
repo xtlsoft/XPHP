@@ -17,6 +17,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
             'X\\' => 2,
             'XDO\\' => 4,
         ),
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -30,7 +34,6 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         array (
             'League\\Event\\' => 13,
             'League\\Container\\' => 17,
-            'League\\BooBoo\\' => 14,
         ),
         'I' => 
         array (
@@ -46,6 +49,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'XDO\\' => 
         array (
             0 => __DIR__ . '/..' . '/xtlsoft/xdo',
+        ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
         ),
         'Psr\\Log\\' => 
         array (
@@ -66,10 +73,6 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'League\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
-        ),
-        'League\\BooBoo\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/booboo/src',
         ),
         'Interop\\Container\\' => 
         array (
