@@ -32,6 +32,7 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         ),
         'L' => 
         array (
+            'LightnCandy\\' => 12,
             'League\\Event\\' => 13,
             'League\\Container\\' => 17,
         ),
@@ -65,6 +66,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'LightnCandy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zordius/lightncandy/src',
         ),
         'League\\Event\\' => 
         array (

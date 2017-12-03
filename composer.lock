@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c75a3f3280e5b6bc43c6bf4baad34d4",
+    "content-hash": "48b7a4ab854f2fb01bab7d40cd4a7409",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -617,6 +617,58 @@
                 "upload"
             ],
             "time": "2017-08-08T05:48:50+00:00"
+        },
+        {
+            "name": "zordius/lightncandy",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zordius/lightncandy.git",
+                "reference": "f96eb18212a0b4e04360b84323f3e8f23fd018c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/zordius/lightncandy/f96eb18212a0b4e04360b84323f3e8f23fd018c7.zip",
+                "reference": "f96eb18212a0b4e04360b84323f3e8f23fd018c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.35"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LightnCandy\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zordius Chen",
+                    "email": "zordius@gmail.com"
+                }
+            ],
+            "description": "An extremely fast PHP implementation of handlebars ( http://handlebarsjs.com/ ) and mustache ( http://mustache.github.io/ ).",
+            "homepage": "https://github.com/zordius/lightncandy",
+            "keywords": [
+                "handlebars",
+                "logicless",
+                "mustache",
+                "php",
+                "template"
+            ],
+            "time": "2017-10-13T08:42:32+00:00"
         }
     ],
     "packages-dev": [],

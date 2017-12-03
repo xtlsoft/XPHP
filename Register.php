@@ -20,7 +20,8 @@
         $App->addBatch([
             ['Core.Error.Handler', '\Whoops\Handler\PrettyPageHandler'],
             ['Core.Route', '\X\Route'],
-            ['Core.Log',   '\X\Log']
+            ['Core.Log',   '\X\Log'],
+            ['Core.View',  '\X\View'],
         ]);
         
     };
