@@ -23,7 +23,7 @@
         /**
          * The version constant.
          */
-        define("X", "1.0.1-beta");
+        define("X", "1.0.3-stable");
 
     }
     
