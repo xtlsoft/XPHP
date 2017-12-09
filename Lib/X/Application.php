@@ -120,7 +120,7 @@
                 $class = "\\Controller\\" . $app . "\\" . $con;
                 $file = $app . "/Controller/" . $con . ".class.php";
                 
-                include($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
+                include_once ($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
 
                 $obj = $instance->boot($class);
 
@@ -142,6 +142,7 @@
             }
 
             foreach(glob($routeDir . "*.json") as $v){
+                $this->route = $this->container->get("Core.Route");
                 $ctn = file_get_contents($v);
                 $ctn = json_decode($ctn, 1);
                 foreach($ctn as $item){
@@ -167,7 +168,7 @@
             return [
                 "vars" => [],
                 "callback" => function (\X\Request $req){
-                    throw new \Exception("404 Not Found", 404);
+                    return new \X\Response(404);
                 }
             ];
 

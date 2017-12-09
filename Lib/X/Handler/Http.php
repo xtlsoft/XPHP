@@ -93,6 +93,8 @@
 
             header("HTTP/1.1 " . $stat . " " . $this->statusMap[$stat]);
 
+            header("Status: $stat");
+
             foreach($response->dump()->header as $k=>$v){
                 header("$k: $v");
             }
