@@ -16,11 +16,11 @@
 
     namespace X;
 
-    class Model implements \X\Interfaces\NeedApplication{
+    class Model implements \X\Interfaces\NeedApplication, \X\Interfaces\Bootable{
 
         public $db;
 
-        public function __construct(){
+        public function bootup(){
             
             $this->db = $this->table($this->table);
 
@@ -28,7 +28,7 @@
 
         public function table($name){
 
-            return $this->app->get("Core.Model.Database")->getTable($name);
+            return $this->app->container->get("Core.Model.Database")->getTable($name);
 
         }
 
@@ -40,13 +40,13 @@
 
         public function __get($name){
 
-            return $this->db->{$name};
+            return @$this->db->{$name};
 
         }
 
         public function __set($name, $value){
             
-            $this->db->{$name} = $value;
+            @$this->db->{$name} = $value;
 
         }
 

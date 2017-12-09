@@ -41,6 +41,7 @@
             foreach($params as $v){
                 $model->withArgument(new \League\Container\Argument\RawArgument($v));
             }
+            
             return $this->app->container->get("Core._.Model." . $name);
         }
 

@@ -9,12 +9,8 @@
     
     use X\Model;
     
-    class IndexModel extends Model{
+    class IndexModel extends Model {
         
-        public function get($a){
-            
-            return $this->ORM->where("name",$a)->findOne()->value;
-            
-        }
+        protected $table = "test";
         
     }

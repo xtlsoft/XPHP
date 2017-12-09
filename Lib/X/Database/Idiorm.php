@@ -22,7 +22,7 @@
 
         public function bootup(){
 
-            $config = $this->app->config['database'];
+            $config = $this->app->config['Database'];
             ORM::configure($config);
             $db = $this;
             ORM::configure('logger', function($log, $time) use ($db){

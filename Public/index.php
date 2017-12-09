@@ -46,7 +46,7 @@
         ],
         "Database"=> [
             'connection_string' => 'mysql:host=localhost;dbname=xphp;charset=utf8', //DSN
-            'driver_options'    => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'), //PDO Option
+            'driver_options'    => array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'), //PDO Option
             'username'          => 'root', //用户名 username
             'password'          => '', //密码 password
             'logging'           => true, //开启Query日志 Enable Query Log
