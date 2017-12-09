@@ -28,6 +28,9 @@
         public function __construct($config){
 
             $this->container = new \League\Container\Container;
+            $this->container->delegate(
+                new \League\Container\ReflectionContainer
+            );            
             $this->container->inflector('X\Interfaces\NeedApplication')->setProperty("app", $this);
             $this->container->inflector('X\Interfaces\Bootable')->invokeMethod('bootup', []);
             // $this->container->inflector('X\Interfaces\Middleware')->invokeMethod('register', []);
