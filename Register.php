@@ -21,6 +21,7 @@
         $App->addBatch([
             ['Core.Error.Handler', '\Whoops\Handler\PrettyPageHandler'],
             ['Core.Route', '\X\Route'],
+            ['Core.Model.Database', '\X\Database\Idiorm']
         ]);
 
         $App->shareBatch([

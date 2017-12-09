@@ -20,9 +20,7 @@
             
             $view = $this->app->container->get('Core.View');
             
-            // return $this->view("Home/Index", $data);
-
-            return $this->json($data, "success", 1);
+            return $this->view("Home/Index", $data);
             
         }
         
