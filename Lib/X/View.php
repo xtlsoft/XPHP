@@ -17,6 +17,10 @@
     namespace X;
     class View implements \X\Interfaces\View, \X\Interfaces\NeedApplication {
 
+        protected $helper = [];
+        protected $data = [];
+        protected $shortcut = [];
+
         public function getTemplate($name){
 
             $viewDir = $this->app->config['SysDir'] . $this->app->config['Path']['Template'];
@@ -30,6 +34,21 @@
 
             return file_get_contents($tplFile);
 
+        }
+
+        public function addHelper($name, $helper){
+            $this->helper[$name] = $helper;
+            return $this;
+        }
+
+        public function addData($name, $value){
+            $this->data[$name] = $value;
+            return $this;
+        }
+
+        public function addShortcut($name, $value){
+            $this->shortcut[$name] = $value;
+            return $this;
         }
 
         public function render($name, $data = []){
@@ -51,9 +70,8 @@
 
             $tplFile = $viewDir. $tplCollection. '/';
 
-            $data['_viewdir'] = $tplFile;
-            $data['_viewext'] = $this->app->config['View']['ExtName'];
-
+            $data = array_merge($this->data, $data);
+            
             return $render($data);
             
         }

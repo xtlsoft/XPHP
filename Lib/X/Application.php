@@ -18,12 +18,12 @@
 
     class Application {
 
-        protected $handler;
+        public $handler;
         public $container;
         public $event;
         public $config;
         public $route;
-        protected $request;
+        public $request;
 
         public function __construct($config){
 
@@ -82,6 +82,21 @@
             }
 
         }
+
+        public function shareBatch($arr){
+
+            foreach($arr as $v){
+                $this->container->share($v[0], $v[1]);
+            }
+
+        }
+
+        public function get($name){
+
+            return $this->container->get($name);
+
+        }
+
 
         public function boot($name){
 

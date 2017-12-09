@@ -20,17 +20,22 @@
 
     class ViewLightnCandy extends \X\View {
 
-        public function getRender($template){
+        public function __construct(){
 
             $view = $this;
 
+            $this->addHelper("include", function ($file, $options) use ($view){
+                return $view->render($file, $options['_this']);
+            });
+
+        }
+
+        public function getRender($template){
+
             return LightnCandy::compile($template, array(
-                "helpers" => [
-                    "include" => function ($file, $options) use ($view){
-                        return $view->render($file, $options['_this']);
-                    }
-                ],
-                "flags"  => LightnCandy::FLAG_NAMEDARG 
+                "helpers" => $this->helper,
+                "flags"  => LightnCandy::FLAG_NAMEDARG  | LightnCandy::FLAG_JSTRUE | LightnCandy::FLAG_JSLENGTH,
+                "partials" => $this->shortcut
             ));
 
         }

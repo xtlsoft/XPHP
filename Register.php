@@ -15,11 +15,15 @@
             ) use ($App){
                 $App->event->emit('Core.Error', $exception, $inspector, $run);
             })])->
+            withMethodCall('allowQuit', [new \League\Container\Argument\RawArgument(false)])->
             withMethodCall('register', []);
 
         $App->addBatch([
             ['Core.Error.Handler', '\Whoops\Handler\PrettyPageHandler'],
             ['Core.Route', '\X\Route'],
+        ]);
+
+        $App->shareBatch([
             ['Core.Log',   '\X\Log'],
             ['Core.View',  '\X\ViewLightnCandy'],
         ]);
