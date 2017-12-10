@@ -18,9 +18,9 @@
                     "welcome" => "欢迎"
                 );
             
-            $model = $this->model("Home/IndexModel");
+            //$model = $this->model("Home/IndexModel");
 
-            var_dump($model->where("name", "testname")->findOne()->value);
+            //var_dump($model->where("name", "testname")->findOne()->value);
             
             return $this->view("Home/Index", $data);
             
