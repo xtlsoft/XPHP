@@ -1,0 +1,9 @@
+[   
+    {
+        "base" : "system:",
+        "rule" : {
+            "CLI version" : "System.CommandLineController:version",
+            "CLI serve" : "System.CommandLineController:serve"
+        }
+    }  
+]

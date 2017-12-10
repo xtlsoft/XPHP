@@ -21,6 +21,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         array (
             'Whoops\\' => 7,
         ),
+        'S' => 
+        array (
+            'Seld\\CliPrompt\\' => 15,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -35,6 +39,7 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
             'LightnCandy\\' => 12,
             'League\\Event\\' => 13,
             'League\\Container\\' => 17,
+            'League\\CLImate\\' => 15,
         ),
         'I' => 
         array (
@@ -54,6 +59,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
+        'Seld\\CliPrompt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/seld/cli-prompt/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -78,6 +87,10 @@ class ComposerStaticInit422bc125ab9b845f3949640018b561a3
         'League\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
+        ),
+        'League\\CLImate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/climate/src',
         ),
         'Interop\\Container\\' => 
         array (
