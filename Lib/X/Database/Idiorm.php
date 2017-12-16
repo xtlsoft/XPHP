@@ -26,7 +26,7 @@
             ORM::configure($config);
             $db = $this;
             ORM::configure('logger', function($log, $time) use ($db){
-                $db->app->event->emit('Core.Log', ["type"=>"info", "event"=>"DB_QUERY", "message"=>"$log IN $time"]);
+                $db->app->event->emit('Core.Log', "QUERY $log IN $time");
             });
 
         }
