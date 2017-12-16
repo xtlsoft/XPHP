@@ -38,4 +38,10 @@
             return $this->data;
         }
 
+        public function __get($name){
+
+            return $this->get()->{$name};
+
+        }
+
     }

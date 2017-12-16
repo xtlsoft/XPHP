@@ -6,4 +6,4 @@ php:
   - '7.1'
   - hhvm # on Trusty only
   - nightly
-script: php Public/index.php
+script: php x system:version

@@ -52,20 +52,29 @@
 
             $this->request = $this->handler->getRequest();
 
+            $this->event->emit("Core.Init");
+
         }
 
         public function run(){
+
+            $this->event->emit("Core.Run");
+
             $this->event->emit('Core._.Middleware.Handle', $this->request);
             $app = $this;
             $this->handler->addResponseCallback(function($resp) use ($app){
                 $app->event->emit('Core._.Middleware.Response', $resp);
             });
 
+            @$this->event->emit("Core.Log", "REQUEST " . $this->request->method . " " . $this->request->uri . " REMOTE " . $this->request->server->REMOTE_ADDR);
+
             $rslt = $this->runRoute();
             $arr = $this->request->getArray();
             $arr['data']['route'] = $rslt['vars'];
             $this->request->set($arr);
             $response = $rslt['callback']($this->request);
+
+            $this->event->emit("Core.Response");
 
             $this->handler->response($response);
 

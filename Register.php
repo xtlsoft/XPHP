@@ -14,6 +14,7 @@
                 $exception, $inspector, $run
             ) use ($App){
                 $App->event->emit('Core.Error', $exception, $inspector, $run);
+                $App->event->emit('Core.Log.Error', $exception->getMessage());
             })])->
             withMethodCall('allowQuit', [new \League\Container\Argument\RawArgument(false)])->
             withMethodCall('register', []);
@@ -28,5 +29,17 @@
             ['Core.Log',   '\X\Log'],
             ['Core.View',  '\X\ViewLightnCandy'],
         ]);
+
+        $App->boot('Core.Log')->addLogger('XPHP')->
+            pushHandler('XPHP', new \Monolog\Handler\StreamHandler(
+                $App->config['SysDir'] . $App->config['Path']['Log']['Info'],
+                \Monolog\Logger::INFO
+            ))->
+            pushHandler('XPHP', new \Monolog\Handler\StreamHandler(
+                $App->config['SysDir'] . $App->config['Path']['Log']['Error'],
+                \Monolog\Logger::ERROR
+            ))->
+            mapEvent('Core.Log', 'XPHP', 'addInfo')->
+            mapEvent('Core.Log.Error', 'XPHP', 'addError');
         
     };

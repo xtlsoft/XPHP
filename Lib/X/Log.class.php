@@ -5,7 +5,7 @@
      * You may read the LICENSE file to
      * know what you can do.
      * 
-     * @pacakge XPHP
+     * @package XPHP
      * @author xtl<xtl@xtlsoft.top>
      * @license MIT
      * 
