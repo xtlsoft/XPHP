@@ -62,7 +62,7 @@
             }else{
                 $render = $this->getRender($this->getTemplate($name));
             }
-
+            
             $render = $this->prepareRender($render);
 
             $viewDir = $this->app->config['SysDir'] . $this->app->config['Path']['Template'];

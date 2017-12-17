@@ -54,7 +54,14 @@
                 ];
             }
 
-            return $this->response(json_encode(array_merge($this->data, $data), ($pretty ? JSON_PRETTY_PRINT | JSON_BIGINT_AS_STRING : JSON_BIGINT_AS_STRING)));
+            $resp = json_encode(array_merge($this->data, $data), ($pretty ? JSON_PRETTY_PRINT | JSON_BIGINT_AS_STRING : JSON_BIGINT_AS_STRING));
+
+            if(@isset($this->app->request->data->get->jsonp)){
+                $resp = $this->app->request->data->get->jsonp . "(" . $resp;
+                $resp .= ");";
+            }
+
+            return $this->response($resp, ["content-type"=>"application/json"]);
 
         }
 

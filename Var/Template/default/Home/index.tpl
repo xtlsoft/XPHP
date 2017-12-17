@@ -36,7 +36,7 @@
                 <td><h1>XPHP</h1></td>
             </tr>
             <tr valign="middle" align="center">
-                <td><h3>Version {{ version }}</h3></td>
+                <td><h3>Version {{ version }} {{{eval "date('Y')"}}}</h3></td>
             </tr>
         </table>
         

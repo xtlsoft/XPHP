@@ -28,6 +28,11 @@
                 return $view->render($file, $options['_this']);
             });
 
+            $this->addHelper("eval", function ($code, $options) use($view) {
+                $result = eval("return " . $code . ";");
+                return $result;
+            });
+
         }
 
         public function getRender($template){
