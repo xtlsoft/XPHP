@@ -16,7 +16,7 @@
     
     namespace X;
     
-    class Route {
+    class Route implements \X\Interfaces\NeedApplication {
         
         /**
          * Routers
@@ -41,7 +41,7 @@
             $rslt = self::parseAddr($addr);
             
             if(! ($rslt instanceof \X\Route\AddrParseResult) ){
-                throw new \Exception("Route Expecting \Rqo\Http\Route\AddrParseResult, Other Given.");
+                throw new \Exception("Route Expecting \X\Route\AddrParseResult, Other Given.");
             }
             
             $route = ["method"=>$method, "keys"=>$rslt->keys, "preg"=>$rslt->preg, "callback"=>$callback];
@@ -64,6 +64,9 @@
         public function handle($method, $addr){
             
             $method = strtolower($method);
+            $rb = $this->app->config['Route']['Base'];
+
+            $addr = substr($addr, ( strlen($rb) ));
             
             foreach($this->route as $v){
                 

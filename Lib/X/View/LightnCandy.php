@@ -14,11 +14,11 @@
      * 
      */
 
-    namespace X;
+    namespace X\View;
 
-    use \LightnCandy\LightnCandy;
+    use \LightnCandy\LightnCandy as LC;
 
-    class ViewLightnCandy extends \X\View {
+    class LightnCandy extends \X\View {
 
         public function __construct(){
 
@@ -37,9 +37,9 @@
 
         public function getRender($template){
 
-            return LightnCandy::compile($template, array(
+            return LC::compile($template, array(
                 "helpers" => $this->helper,
-                "flags"  => LightnCandy::FLAG_NAMEDARG  | LightnCandy::FLAG_JSTRUE | LightnCandy::FLAG_JSLENGTH,
+                "flags"  => LC::FLAG_NAMEDARG  | LC::FLAG_JSTRUE | LC::FLAG_JSLENGTH,
                 "partials" => $this->shortcut
             ));
 

@@ -27,7 +27,7 @@
 
         $App->shareBatch([
             ['Core.Log',   '\X\Log'],
-            ['Core.View',  '\X\ViewLightnCandy'],
+            ['Core.View',  '\X\View\LightnCandy'],
         ]);
 
         $App->boot('Core.Log')->addLogger('XPHP')->

@@ -1,0 +1,5 @@
+[2017-12-30 00:06:19] XPHP.ERROR: Too few arguments to function X\View\Basic::__construct(), 0 passed and exactly 1 expected [] []
+[2017-12-30 00:07:06] XPHP.ERROR: Undefined variable: tpl [] []
+[2017-12-30 00:07:19] XPHP.ERROR: Undefined index: process [] []
+[2017-12-30 00:07:46] XPHP.ERROR: syntax error, unexpected '&' [] []
+[2017-12-30 00:11:40] XPHP.ERROR: Undefined index: RouteBase [] []
