@@ -6,4 +6,7 @@ php:
   - '7.1'
   - hhvm # on Trusty only
   - nightly
-script: php x system:version
+
+script: 
+  - composer install
+  - php x system:version
