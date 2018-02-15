@@ -26,8 +26,9 @@
         ]);
 
         $App->shareBatch([
-            ['Core.Log',   '\X\Log'],
-            ['Core.View',  '\X\View\LightnCandy'],
+            ['Core.Log',      '\X\Log'],
+            ['Core.View',     '\X\View\LightnCandy'],
+            ['Core.Language', '\X\Language']
         ]);
 
         $App->boot('Core.Log')->addLogger('XPHP')->
@@ -41,5 +42,7 @@
             ))->
             mapEvent('Core.Log', 'XPHP', 'addInfo')->
             mapEvent('Core.Log.Error', 'XPHP', 'addError');
+
+        $App->boot("Core.Language");
         
     };

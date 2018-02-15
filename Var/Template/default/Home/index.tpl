@@ -33,7 +33,7 @@
         
         <table border="0" width="100%" height="100%">
             <tr valign="middle" align="center">
-                <td><h1>XPHP</h1></td>
+                <td><h1>{{lang "Index/WelcomeTo"}} XPHP</h1></td>
             </tr>
             <tr valign="middle" align="center">
                 <td><h3>Version {{ version }} {{{eval "date('Y')"}}}</h3></td>

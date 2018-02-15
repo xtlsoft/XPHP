@@ -9,7 +9,8 @@
             "Log"         => [
                 "Info"      => "Var/Log/info.log",
                 "Error"     => "Var/Log/error.log"
-            ]
+            ],
+            "Language"    => "Var/Lang/"
         ], 
         "View"    => [
             "Start"    => "{{",
@@ -30,6 +31,7 @@
         "Route"   => [
             "Base"     => ""
         ],
+        "Language"=> "zh_cn",
         "Version" => X,
         "Debug"   => true
     ];
