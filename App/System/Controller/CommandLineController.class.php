@@ -40,5 +40,12 @@
 
         }
 
+        public function init($req){
+
+            $cli = $this->app->handler->cli;
+            $cli->out("<bold><yellow>Welcome to XPHP project init.</yellow></bold>");
+
+        }
+
     }
     

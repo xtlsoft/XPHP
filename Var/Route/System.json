@@ -3,7 +3,10 @@
         "base" : "system:",
         "rule" : {
             "CLI version" : "System.CommandLineController:version",
-            "CLI serve" : "System.CommandLineController:serve"
+            "CLI serve" : "System.CommandLineController:serve",
+            "CLI init" : "System.CommandLineController:init",
+            "CLI update" : "System.CommandLineController:update",
+            "CLI push" : "System.CommandLineController:push"
         }
-    }  
+    }
 ]

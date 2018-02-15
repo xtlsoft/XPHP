@@ -1,6 +1,6 @@
 {
     "name": "xtlsoft/xphp",
-    "description": "Wonderful & high-performance PHP classic framework.",
+    "description": "Wonderful & high-performance PHP framework.",
     "version": "1.0.0-alpha",
     "type": "project",
     "require": {
