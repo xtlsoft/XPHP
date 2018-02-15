@@ -12,7 +12,8 @@
         "league/container": "^2.4",
         "filp/whoops": "^2.1",
         "zordius/lightncandy": "^1.2",
-        "league/climate": "^3.2"
+        "league/climate": "^3.2",
+        "xtlsoft/nondb": "dev-master"
     },
     "license": "MIT",
     "autoload": {

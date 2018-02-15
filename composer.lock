@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "41f4d7eb5f327e9ad1968b99b6ba7e2d",
+    "content-hash": "222eed37847c56274f2e579d2e51b629",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -673,6 +673,42 @@
             "time": "2017-03-18T11:32:45+00:00"
         },
         {
+            "name": "xtlsoft/nondb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xtlsoft/NonDB.git",
+                "reference": "edbcee14a60b68c7431720bced673a1c713e3639"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/xtlsoft/NonDB/edbcee14a60b68c7431720bced673a1c713e3639.zip",
+                "reference": "edbcee14a60b68c7431720bced673a1c713e3639",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NonDB\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xtl",
+                    "email": "xtl@xtlsoft.top"
+                }
+            ],
+            "description": "A NoSQL Database Based On Json Storage.",
+            "time": "2017-12-22T23:43:39+00:00"
+        },
+        {
             "name": "xtlsoft/xdo",
             "version": "v0.1.3-stable",
             "source": {
@@ -773,7 +809,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "xtlsoft/nondb": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
