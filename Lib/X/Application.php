@@ -76,6 +76,10 @@
 
             $this->event->emit("Core.Response");
 
+            if(!$response){
+                $response = new \X\Response(200, [], "");
+            }
+
             $this->handler->response($response);
 
         }
