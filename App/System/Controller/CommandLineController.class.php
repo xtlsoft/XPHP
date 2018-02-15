@@ -57,7 +57,64 @@
             $xphp_version = $cli->input("XPHP Version: [" . X . "]")
                 ->defaultTo(X)
                 ->prompt();
+            $need_stable_version = $cli->confirm('Need Stable Version:')->confirmed();
+            $edited_core_files = [];
+            
+            $base = $this->app->config['SysDir'];
 
+            do {
+                $item = $cli->input("Edited Core Files: (Leave empty to quit)")->accept(function($input) use ($base){ 
+                    if(is_file($input) || $input == ""){
+                        return true;
+                    }else{
+                        echo "Invalid Input.\r\n";
+                        return false;
+                    }
+                })->prompt();
+                if($item != ""){
+                    $edited_core_files[] = $item;
+                }
+            }while($item != "");
+
+            $xphpJson = [
+                "name"                => $name, 
+                "description"         => $description, 
+                "version"             => $version,
+                "xphp-version"        => $xphp_version,
+                "edited-core-files"   => $edited_core_files,
+                "need-stable-version" => $need_stable_version
+            ];
+
+            $xphpJson = json_encode($xphpJson, JSON_PRETTY_PRINT);
+
+            $cli->backgroundLightBlue($xphpJson);
+
+            $confirm = $cli->confirm("Is That OK?")->confirmed();
+
+            if($confirm){
+                file_put_contents($base . "xphp.json", $xphpJson);
+                $cli->out("<green>Done.</green>");
+            }
+
+            $composer = $cli->confirm("Run <blue>composer init</blue>?")->confirmed();
+            if($composer){
+                shell_exec("composer init");
+            }
+
+            return $this->response("");
+
+        }
+
+        public function update(){
+
+
+
+        }
+
+        public function push(){
+
+
+            
         }
 
     }

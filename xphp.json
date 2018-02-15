@@ -1,10 +1,8 @@
 {
-    "name": "xtlsoft/xphp",
+    "name": "XPHP",
     "description": "Wonderful & high-performance PHP framework.",
     "version": "1.0.6-stable",
     "xphp-version": "1.0.6-stable",
-    "edited-core-files": [
-        
-    ],
+    "edited-core-files": [],
     "need-stable-version": true
 }
