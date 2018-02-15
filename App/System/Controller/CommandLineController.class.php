@@ -44,6 +44,19 @@
 
             $cli = $this->app->handler->cli;
             $cli->out("<bold><yellow>Welcome to XPHP project init.</yellow></bold>");
+            $cli->out("We need some information from you in order to init your project.");
+            $cli->br();
+            $name = $cli->input("Project Name: [" . basename($this->app->config['SysDir']) . "]")
+                ->defaultTo(basename($this->app->config['SysDir']))
+                ->prompt();
+            $description = $cli->input("Describe your Project: []")
+                ->prompt();
+            $version = $cli->input("Version: [0.1.0-alpha]")
+                ->defaultTo("0.1.0-alpha")
+                ->prompt();
+            $xphp_version = $cli->input("XPHP Version: [" . X . "]")
+                ->defaultTo(X)
+                ->prompt();
 
         }
 
