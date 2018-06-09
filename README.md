@@ -1,6 +1,13 @@
 # XPHP
 
-<p align="center"><a href="https://packagist.org/packages/xtlsoft/xphp"><img src="https://poser.pugx.org/xtlsoft/xphp/license" alt="License"></a><a href="https://packagist.org/packages/xtlsoft/xphp"><img src="https://poser.pugx.org/xtlsoft/xphp/v/stable" alt="Latest Stable Version"></a><a href="https://php.net"><img src="https://img.shields.io/badge/PHP-5.4+-blue.svg" alt="Require PHP Version"></a><a href="https://codeclimate.com/github/xtlsoft/XPHP"><img src="https://codeclimate.com/github/xtlsoft/XPHP/badges/gpa.svg" alt="Code Climate"></a><a href="https://travis-ci.org/xtlsoft/XPHP"><img src="https://travis-ci.org/xtlsoft/XPHP.svg?branch=master" alt="Build Status"></a><a href="https://blog.xtlsoft.top"><img src="https://img.shields.io/badge/Made%20with-love-yellowgreen.svg" alt="MadeWithLove"></a></p>
+<p align="center"><a href="https://packagist.org/packages/xtlsoft/xphp">
+<img src="https://poser.pugx.org/xtlsoft/xphp/license" alt="License"></a>
+<a href="https://packagist.org/packages/xtlsoft/xphp"><img src="https://poser.pugx.org/xtlsoft/xphp/v/stable" alt="Latest Stable Version"></a>
+<a href="https://php.net"><img src="https://img.shields.io/badge/PHP-5.4+-blue.svg" alt="Require PHP Version"></a>
+<a href="https://codeclimate.com/github/xtlsoft/XPHP"><img src="https://codeclimate.com/github/xtlsoft/XPHP/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://travis-ci.org/xtlsoft/XPHP"><img src="https://travis-ci.org/xtlsoft/XPHP.svg?branch=master" alt="Build Status"></a>
+<a href="https://blog.xtlsoft.top"><img src="https://img.shields.io/badge/Made%20with-love-yellowgreen.svg" alt="MadeWithLove"></a>
+</p>
 
 XPHP is a light, easy PHP framework.
 XPHP是一个轻便，简单的PHP框架。
