@@ -1,33 +1,35 @@
 # XPHP
 
-[![License](https://poser.pugx.org/xtlsoft/xphp/license)](https://packagist.org/packages/xtlsoft/xphp)
-[![Latest Stable Version](https://poser.pugx.org/xtlsoft/xphp/v/stable)](https://packagist.org/packages/xtlsoft/xphp)
-[![Require PHP Version](https://img.shields.io/badge/PHP-5.4+-blue.svg)](https://php.net)
-[![Code Climate](https://codeclimate.com/github/xtlsoft/XPHP/badges/gpa.svg)](https://codeclimate.com/github/xtlsoft/XPHP)
-[![Build Status](https://travis-ci.org/xtlsoft/XPHP.svg?branch=master)](https://travis-ci.org/xtlsoft/XPHP)
-[![MadeWithLove](https://img.shields.io/badge/Made%20with-love-yellowgreen.svg)](https://blog.xtlsoft.top)
+<p align="center"><a href="https://packagist.org/packages/xtlsoft/xphp">
+<img src="https://poser.pugx.org/xtlsoft/xphp/license" alt="License"></a>
+<a href="https://packagist.org/packages/xtlsoft/xphp"><img src="https://poser.pugx.org/xtlsoft/xphp/v/stable" alt="Latest Stable Version"></a>
+<a href="https://php.net"><img src="https://img.shields.io/badge/PHP-5.4+-blue.svg" alt="Require PHP Version"></a>
+<a href="https://codeclimate.com/github/xtlsoft/XPHP"><img src="https://codeclimate.com/github/xtlsoft/XPHP/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://travis-ci.org/xtlsoft/XPHP"><img src="https://travis-ci.org/xtlsoft/XPHP.svg?branch=master" alt="Build Status"></a>
+<a href="https://blog.xtlsoft.top"><img src="https://img.shields.io/badge/Made%20with-love-yellowgreen.svg" alt="MadeWithLove"></a>
+</p>
 
-XPHP is a light, easy PHP framework.
+XPHP is a lightweight, simple PHP framework.
 XPHP是一个轻便，简单的PHP框架。
 
 ## Tip 提示
-Please don't clone the master branch directly, because the version 1.0.0 is still developing.
+Please don't `clone` the master branch directly, because the version 1.0.0 is still in development.
 You can download the 0.3.0 of XPHP here: https://github.com/xtlsoft/XPHP/releases/
 
-请勿直接clone主分支，因为1.0.0版还在开发。
+请勿直接 `Clone` 主分支，因为1.0.0版还在开发。
 你可以从此处下载XPHP的0.3.0版：https://github.com/xtlsoft/XPHP/releases/
 
 ## Features 特性
-- Use Composer and Archive-Library-Install together. 一起使用Composer和传统归档库管理。
-- Light but Strong, Fast but Good. 轻便但强壮，快速但不少功能。
+- Use Composer and Archive-Library-Install together. 一起使用 `Composer` 和传统归档库管理。
+- Lightweight and Strong, Fast and Functional. 轻便但强壮，快速但不少功能。
 - Good Log and Error proccessing. 极棒的Log和Error处理。
 - Self-written fast, useful and open Route. 自己实现的快速，自定义性强的路由。
 - Fast template engine, use orgin php. 快速的模板引擎，使用原生php。
 - MVC and MVVM compatible, plus `?inajax=yes` in URI to turn it into API. MVC和MVVM兼容，增加`?inajax=yes`参数，就可以把页面变成API。
 - Muiti-Language Support 多语言支持
 - Json API compatible. JSON格式API兼容。
-- Less Code, Do More 极少的代码，极大的成效
-- Easy to learn 极易上手
+- Less Code, Do More. 极少的代码，极大的成效
+- Easy to learn. 极易上手
 
 ## Document 文档
 Now only zh_cn Document avalible.
