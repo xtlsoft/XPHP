@@ -11,7 +11,7 @@ Lighter, Faster, Better.
 
 ## Document 文档
 
-Now only Chinese document avalible.
+Now only Chinese document avaliable.
 
 目前只有中文文档。
 
