@@ -1,9 +1,9 @@
 [
-    {
-        "base" : "/",
-        "rule" : {
-            "GET index.html" : "Home.IndexController:index",
-            "GET hi/{hi}" : "Home.IndexController:Wow"
-        }
+  {
+    "base": "/",
+    "rule": {
+      "GET index.html": "Home.IndexController:index",
+      "GET hi/{hi}": "Home.IndexController:Wow"
     }
+  }
 ]

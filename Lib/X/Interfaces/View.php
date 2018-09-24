@@ -1,23 +1,26 @@
 <?php
+/**
+ * XPHP - PHP Framework
+ *
+ * This project is licensed
+ * under MIT. Please use it
+ * under the license and law.
+ *
+ * @category Framework
+ * @package  XPHP
+ * @author   Tianle Xu <xtl@xtlsoft.top>
+ * @license  MIT
+ * @link     https://github.com/xtlsoft/XPHP
+ *
+ */
+
+namespace X\Interfaces;
+
+interface View
+{
     /**
-     * XPHP - PHP Framework
-     * 
-     * This project is licensed
-     * under MIT. Please use it
-     * under the license and law.
-     * 
-     * @category Framework
-     * @package  XPHP
-     * @author   Tianle Xu <xtl@xtlsoft.top>
-     * @license  MIT
-     * @link     https://github.com/xtlsoft/XPHP
-     * 
+     * @param string $name
+     * @param array $data
      */
-
-    namespace X\Interfaces;
-
-    interface View {
-        
-        public function render($name, $data);
-
-    }
+    public function render($name, $data);
+}

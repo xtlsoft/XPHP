@@ -1,106 +1,88 @@
 <?php
+/**
+ * XPHP - PHP Framework
+ *
+ * This project is licensed
+ * under MIT. Please use it
+ * under the license and law.
+ *
+ * @category Framework
+ * @package  XPHP
+ * @author   Tianle Xu <xtl@xtlsoft.top>
+ * @license  MIT
+ * @link     https://github.com/xtlsoft/XPHP
+ *
+ */
+
+namespace X;
+
+class Response
+{
+
     /**
-     * XPHP - PHP Framework
-     * 
-     * This project is licensed
-     * under MIT. Please use it
-     * under the license and law.
-     * 
-     * @category Framework
-     * @package  XPHP
-     * @author   Tianle Xu <xtl@xtlsoft.top>
-     * @license  MIT
-     * @link     https://github.com/xtlsoft/XPHP
-     * 
+     * @var int
      */
-    
-    namespace X;
-    
-    class Response {
-        
-        /**
-         * Status code
-         * 
-         * @var $status
-         * 
-         */
-        public $status = 200;
-        
-        /**
-         * Headers
-         * 
-         * @var $header
-         * 
-         */
-        public $header = [];
-        
-        /**
-         * Content
-         * 
-         * @var $content
-         * 
-         */
-        public $content = "";
-        
-        /**
-         * Constructor
-         * 
-         * @param int statusCode
-         * 
-         * @return void
-         * 
-         */
-        public function __construct($code = 200, $header = [], $content = ""){
-            
-            $this->status = $code;
-            $this->header = new \X\Header($header);
-            $this->content = $content;
-            
-        }
-        
-        /**
-         * Set Header
-         * 
-         * @param \X\Header The Header Object.
-         * 
-         * @return self   
-         * 
-         */
-        public function header($a, $b = ""){
-            
-            $this->header->set($a, $b);
-            
-            return $this;
-            
-        }
-        
-        /**
-         * Write Result to Buffer
-         * 
-         * @param string The Data
-         * 
-         * @return self   
-         * 
-         */
-        public function write($data){
-            
-            $this->content .= $data;
-            
-            return $this;
-            
-        }
-        
-        /**
-         * Dump the data
-         * 
-         * @return self   
-         * 
-         */
-        public function dump(){
-            if($this->header instanceof \X\Header)
-                $this->header = $this->header->dump();
-            return $this;
-            
-        }
-        
+    public $status = 200;
+
+    /**
+     * @var array
+     */
+    public $headers = [];
+
+    /**
+     * @var string
+     */
+    public $content = "";
+
+    /**
+     * @param int $code
+     * @param array $header
+     * @param string $content
+     */
+    public function __construct($code = 200, $header = [], $content = "")
+    {
+
+        $this->status = $code;
+        $this->headers = new Header($header);
+        $this->content = $content;
     }
+
+    /**
+     * Set a header
+     *
+     * @param string|array $name
+     * @param string $value
+     * @return Response
+     */
+    public function header($name, $value = '')
+    {
+        $this->headers->set($name, $value);
+        return $this;
+    }
+
+    /**
+     * Write result to buffer
+     *
+     * @param string $data
+     * @return Response
+     */
+    public function write($data)
+    {
+        $this->content .= $data;
+        return $this;
+    }
+
+    /**
+     * Dump the data
+     *
+     * @return Response
+     */
+    public function dump()
+    {
+        if ($this->headers instanceof Header) {
+            $this->headers = $this->headers->dump();
+        }
+        return $this;
+    }
+
+}

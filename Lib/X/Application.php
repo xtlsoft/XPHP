@@ -1,190 +1,195 @@
 <?php
+/**
+ * XPHP - PHP Framework
+ *
+ * This project is licensed
+ * under MIT. Please use it
+ * under the license and law.
+ *
+ * @category Framework
+ * @package  XPHP
+ * @author   Tianle Xu <xtl@xtlsoft.top>
+ * @license  MIT
+ * @link     https://github.com/xtlsoft/XPHP
+ *
+ */
+
+namespace X;
+
+use League\Container\Container;
+use League\Container\ReflectionContainer;
+use League\Event\Emitter;
+
+class Application
+{
+
+    public $handler;
+
     /**
-     * XPHP - PHP Framework
-     * 
-     * This project is licensed
-     * under MIT. Please use it
-     * under the license and law.
-     * 
-     * @category Framework
-     * @package  XPHP
-     * @author   Tianle Xu <xtl@xtlsoft.top>
-     * @license  MIT
-     * @link     https://github.com/xtlsoft/XPHP
-     * 
+     * @var \League\Container\Container
      */
+    public $container;
 
-    namespace X;
+    /**
+     * @var \League\Event\Emitter
+     */
+    public $event;
 
-    class Application {
+    /**
+     * @var array
+     */
+    public $config;
 
-        public $handler;
-        public $container;
-        public $event;
-        public $config;
-        public $route;
-        public $request;
+    /**
+     * @var array
+     */
+    public $route;
 
-        public function __construct($config){
+    public $request;
 
-            $this->container = new \League\Container\Container;
-            $this->container->delegate(
-                new \League\Container\ReflectionContainer
-            );            
-            $this->container->inflector('X\Interfaces\NeedApplication')->setProperty("app", $this);
-            $this->container->inflector('X\Interfaces\Bootable')->invokeMethod('bootup', []);
-            // $this->container->inflector('X\Interfaces\Middleware')->invokeMethod('register', []);
-            $this->event = new \League\Event\Emitter;
+    public function __construct($config)
+    {
+        $this->container = new Container();
+        $this->container->delegate(new ReflectionContainer());
+        $this->container->inflector('X\Interfaces\NeedApplication')->setProperty("app", $this);
+        $this->container->inflector('X\Interfaces\Bootable')->invokeMethod('bootup', []);
+        // $this->container->inflector('X\Interfaces\Middleware')->invokeMethod('register', []);
+        $this->event = new Emitter();
+        $this->config = $config;
+    }
 
-            $this->config = $config;
-
+    public function init()
+    {
+        $this->route = $this->container->get('Core.Route');
+        if ($this->container->has('Core.Error')) {
+            $this->container->get('Core.Error');
         }
+        $this->handler = $this->container->get('Request.Handler');
+        $this->request = $this->handler->getRequest();
+        $this->event->emit("Core.Init");
+    }
 
-        public function init(){
-
-            $this->route = $this->container->get('Core.Route');
-
-            if($this->container->has('Core.Error')){
-                $this->container->get('Core.Error');
-            }
-
-            $this->handler = $this->container->get('Request.Handler');
-
-            $this->request = $this->handler->getRequest();
-
-            $this->event->emit("Core.Init");
-
+    public function run()
+    {
+        $this->event->emit("Core.Run");
+        $this->event->emit('Core._.Middleware.Handle', $this->request);
+        $app = $this;
+        $this->handler->addResponseCallback(function ($resp) use ($app) {
+            $app->event->emit('Core._.Middleware.Response', $resp);
+        });
+        @$this->event->emit("Core.Log", "REQUEST " . $this->request->method . " " . $this->request->uri . " REMOTE " . $this->request->server->REMOTE_ADDR);
+        $route = $this->runRoute();
+        $requests = $this->request->getArray();
+        $requests['data']['route'] = $route['vars'];
+        $this->request->set($requests);
+        $response = $route['callback']($this->request);
+        $this->event->emit("Core.Response");
+        if (!$response) {
+            $response = new Response(200, [], "");
         }
+        $this->handler->response($response);
+    }
 
-        public function run(){
+    /**
+     * @param string $scriptFile The path of the script file
+     * @return mixed
+     */
+    public function runScript($scriptFile)
+    {
+        $script = @include($this->config['SysDir'] . $scriptFile);
+        return $script($this);
+    }
 
-            $this->event->emit("Core.Run");
-
-            $this->event->emit('Core._.Middleware.Handle', $this->request);
-            $app = $this;
-            $this->handler->addResponseCallback(function($resp) use ($app){
-                $app->event->emit('Core._.Middleware.Response', $resp);
-            });
-
-            @$this->event->emit("Core.Log", "REQUEST " . $this->request->method . " " . $this->request->uri . " REMOTE " . $this->request->server->REMOTE_ADDR);
-
-            $rslt = $this->runRoute();
-            $arr = $this->request->getArray();
-            $arr['data']['route'] = $rslt['vars'];
-            $this->request->set($arr);
-            $response = $rslt['callback']($this->request);
-
-            $this->event->emit("Core.Response");
-
-            if(!$response){
-                $response = new \X\Response(200, [], "");
-            }
-
-            $this->handler->response($response);
-
+    public function addBatch($batches)
+    {
+        foreach ($batches as $batch) {
+            $this->container->add($batch[0], $batch[1]);
         }
+    }
 
-        public function runScript($fileName){
-
-            $script = @include($this->config['SysDir'] . $fileName);
-            return $script($this);
-
+    public function shareBatch($batches)
+    {
+        foreach ($batches as $batch) {
+            $this->container->share($batch[0], $batch[1]);
         }
+    }
 
-        public function addBatch($arr){
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function get($name)
+    {
+        return $this->container->get($name);
+    }
 
-            foreach($arr as $v){
-                $this->container->add($v[0], $v[1]);
-            }
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function boot($name)
+    {
+        if (!$this->container->has($name))
+            $this->container->add($name);
+        return $this->container->get($name);
+    }
 
+    /**
+     * @param string $name
+     * @return callable
+     */
+    public function controllerAsCallback($name)
+    {
+        $instance = $this;
+        return function (Request $req) use ($name, $instance) {
+            $name = explode(":", $name);
+            $cls = $name[0];
+            $method = $name[1];
+            $cls = explode(".", $cls);
+            $app = $cls[0];
+            $con = $cls[1];
+
+            $class = "\\Controller\\" . $app . "\\" . $con;
+            $file = $app . "/Controller/" . $con . ".class.php";
+            include_once($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
+            $obj = $instance->boot($class);
+            return call_user_func([$obj, $method], $req);
+        };
+    }
+
+    /**
+     * @return array
+     */
+    protected function runRoute()
+    {
+        $method = $this->request->get()->method;
+        $routeDir = $this->config['SysDir'] . $this->config['Path']['Route'];
+        if (($url = $this->route->handle($method, $this->request->get()->uri)) !== 404) {
+            return $url;
         }
-
-        public function shareBatch($arr){
-
-            foreach($arr as $v){
-                $this->container->share($v[0], $v[1]);
-            }
-
-        }
-
-        public function get($name){
-
-            return $this->container->get($name);
-
-        }
-
-
-        public function boot($name){
-
-            if(!$this->container->has($name))
-                $this->container->add($name);
-            return $this->container->get($name);
-
-        }
-
-        public function controllerAsCallback($name){
-            $instance = $this;
-            return function(\X\Request $req) use ($name, $instance){
-                $name = explode(":", $name);
-                $cls = $name[0]; $method = $name[1];
-                $cls = explode(".", $cls);
-                $app = $cls[0]; $con = $cls[1];
-
-                $class = "\\Controller\\" . $app . "\\" . $con;
-                $file = $app . "/Controller/" . $con . ".class.php";
-                
-                include_once ($this->config['SysDir'] . $this->config['Path']['Application'] . $file);
-
-                $obj = $instance->boot($class);
-
-                return call_user_func([$obj, $method], $req);
-            };
-        }
-
-        protected function runRoute(){
-
-            $req = $this->request;
-
-            $method = $req->get()->method;
-
-            $routeDir = $this->config['SysDir'] . $this->config['Path']['Route'];
-            
-            $rslt = $this->route->handle($method, $req->get()->uri);
-            if($rslt !== 404){
-                return $rslt;
-            }
-
-            foreach(glob($routeDir . "*.json") as $v){
-                $this->route = $this->container->get("Core.Route");
-                $ctn = file_get_contents($v);
-                $ctn = json_decode($ctn, 1);
-                foreach($ctn as $item){
-                    $base = $item['base'];
-                    if(substr($req->get()->uri, 0, strlen($base)) == $base){
-                        $path = substr($req->get()->uri, ( strlen($base) ));
-                        foreach($item['rule'] as $rule=>$callback){
-                            $rule = explode(" ", $rule);
-                            $this->route->on(
-                                strtolower($rule[0]), 
-                                $rule[1],
-                                $this->controllerAsCallback($callback)
-                            );
-                        }
-                        $rslt = $this->route->handle($method, $path);
-                        if($rslt !== 404){
-                            return $rslt;
-                        }
+        foreach (glob($routeDir . "*.json") as $routeFile) {
+            $this->route = $this->container->get("Core.Route");
+            foreach (json_decode(file_get_contents($routeFile), true) as $item) {
+                $base = $item['base'];
+                if (substr($this->request->get()->uri, 0, strlen($base)) == $base) {
+                    $path = substr($this->request->get()->uri, strlen($base));
+                    foreach ($item['rule'] as $rule => $callback) {
+                        $rule = explode(" ", $rule);
+                        $this->route->on(strtolower($rule[0]), $rule[1], $this->controllerAsCallback($callback));
+                    }
+                    if (($url = $this->route->handle($method, $path)) !== 404) {
+                        return $url;
                     }
                 }
             }
-
-            return [
-                "vars" => [],
-                "callback" => function (\X\Request $req){
-                    return new \X\Response(404);
-                }
-            ];
-
         }
+        return [
+            "vars" => [],
+            "callback" => function () {
+                return new Response(404);
+            }
+        ];
 
     }
+
+}
