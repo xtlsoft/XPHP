@@ -12,7 +12,7 @@
     "ircmaxell/filterus": "^1.0",
     "j4mie/idiorm": "^1.5",
     "monolog/monolog": "^1.23",
-    "filp/whoops": "1.1.10",
+    "filp/whoops": " >=1.1",
     "zordius/lightncandy": "^1.2",
     "xtlsoft/nondb": "dev-master"
   },
