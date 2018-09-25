@@ -14,7 +14,7 @@
     "zordius/lightncandy": "^1.2",
     "league/climate": "^3.2",
     "xtlsoft/nondb": "dev-master",
-    "ext-json": "^1.5"
+    "ext-json": ">=1.0"
   },
   "license": "MIT",
   "autoload": {
