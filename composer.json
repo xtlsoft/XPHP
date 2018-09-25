@@ -5,16 +5,16 @@
   "type": "project",
   "require": {
     "php": ">=5.4",
+    "ext-json": ">=1.0",
+    "league/container": "^2.4",
+    "league/event": "^2.1",
+    "league/climate": "^3.2",
     "ircmaxell/filterus": "^1.0",
     "j4mie/idiorm": "^1.5",
     "monolog/monolog": "^1.23",
-    "league/event": "^2.1",
-    "league/container": "^2.4",
     "filp/whoops": "^2.1",
     "zordius/lightncandy": "^1.2",
-    "league/climate": "^3.2",
-    "xtlsoft/nondb": "dev-master",
-    "ext-json": ">=1.0"
+    "xtlsoft/nondb": "dev-master"
   },
   "license": "MIT",
   "autoload": {

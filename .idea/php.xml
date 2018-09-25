@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PhpIncludePathManager">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
-      <path value="$PROJECT_DIR$/vendor/ircmaxell/filterus" />
-      <path value="$PROJECT_DIR$/vendor/zordius/lightncandy" />
-      <path value="$PROJECT_DIR$/vendor/xtlsoft/nondb" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/league/event" />
-      <path value="$PROJECT_DIR$/vendor/league/climate" />
-      <path value="$PROJECT_DIR$/vendor/league/container" />
-      <path value="$PROJECT_DIR$/vendor/j4mie/idiorm" />
-      <path value="$PROJECT_DIR$/vendor/seld/cli-prompt" />
-    </include_path>
-  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
 </project>
