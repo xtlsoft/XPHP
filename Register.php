@@ -30,7 +30,7 @@ return function ($app) {
 
     $app->shareBatch([
         ['Core.Log', '\X\Log'],
-        ['Core.View', '\X\View\LightnCandy'],
+        ['Core.View', '\X\View\LightnCandyView'],
         ['Core.Language', '\X\Language']
     ]);
 

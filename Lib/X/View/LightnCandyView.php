@@ -16,9 +16,10 @@
 
 namespace X\View;
 
-use \LightnCandy\LightnCandy as LC;
+use X\View;
+use LightnCandy\LightnCandy as LC;
 
-class LightnCandy extends \X\View
+class LightnCandyView extends View
 {
 
     public function __construct()

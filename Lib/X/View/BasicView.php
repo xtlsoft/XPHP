@@ -16,7 +16,9 @@
 
 namespace X\View;
 
-class Basic extends \X\View
+use X\View;
+
+class BasicView extends View
 {
 
     public $vars;

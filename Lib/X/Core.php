@@ -16,35 +16,43 @@
 
 namespace X;
 
+use League\Container\Container;
+use League\Event\Emitter;
+use League\Container\Exception\NotFoundException as ContainerNotFoundException;
+
 class Core
 {
 
+    /**
+     * @var Container
+     */
     public static $container;
+
+    /**
+     * @var Emitter
+     */
     public static $event;
     public static $global;
 
     public static function init()
     {
-        self::$container = new \League\Container\Container();
-        self::$event = new \League\Event\Emitter();
+        self::$container = new Container();
+        self::$event = new Emitter();
     }
 
     public static function run()
     {
-
         //Error Controlling
         try {
             $core_error = self::get('Core.Error');
-        } catch (\League\Container\Exception\NotFoundException $e) {
+        } catch (ContainerNotFoundException $e) {
 
         }
         if ($core_error) {
             $core_error->pushFormatter(self::get("Core.Error.Formatter"));
             $core_error->register();
         }
-
     }
-
 }
 
 Core::init();

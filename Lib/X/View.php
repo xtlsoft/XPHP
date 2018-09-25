@@ -19,8 +19,20 @@ namespace X;
 use X\Interfaces\View as IView;
 use X\Interfaces\NeedApplication as INeedApplication;
 
-class View implements IView, INeedApplication
+abstract class View implements IView, INeedApplication
 {
+
+    /**
+     * @param string $content
+     * @return string
+     */
+    abstract public function getRender($content);
+
+    /**
+     * @param string $renderCode
+     * @return callable
+     */
+    abstract public function prepareRender($renderCode);
 
     /**
      * @var callable[]

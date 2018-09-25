@@ -18,9 +18,22 @@ namespace X\Interfaces;
 
 interface View
 {
+
+    /**
+     * @param string $content
+     * @return string
+     */
+    function getRender($content);
+
+    /**
+     * @param string $renderCode
+     * @return callable
+     */
+    function prepareRender($renderCode);
+
     /**
      * @param string $name
      * @param array $data
      */
-    public function render($name, $data);
+    function render($name, $data);
 }

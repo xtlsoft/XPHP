@@ -16,58 +16,74 @@
 
 namespace X;
 
-class Controller implements \X\Interfaces\NeedApplication
+use X\Interfaces\NeedApplication as INeedApplication;
+use League\Container\Argument\RawArgument;
+
+class Controller implements INeedApplication
 {
 
     protected $data = [];
 
+    /**
+     * @param string $data
+     * @param array $header
+     * @param int $status
+     * @return Response
+     */
     protected function response($data = "", $header = [], $status = 200)
     {
-
-        return new \X\Response($status, $header, $data);
-
+        return new Response($status, $header, $data);
     }
 
+    /**
+     * @param string $name
+     * @param array $data
+     * @return Response
+     */
     protected function view($name, $data = [])
     {
         $view = $this->app->container->get('Core.View');
         return $this->response($view->render($name, array_merge($this->data, $data)));
     }
 
+    /**
+     * @param string $name
+     * @param array $params
+     * @return Model
+     */
     protected function model($name, $params = [])
     {
-        $nm = str_replace("\\", "/", $name);
-        $nm = explode("/", $nm);
-        $path = $this->app->config['SysDir'] . $this->app->config['Path']['Application'] . $nm[0] . '/Model/' . $nm[1] . '.class.php';
+        $nameSp = str_replace("\\", "/", $name);
+        $nameSp = explode("/", $nameSp);
+        $path = $this->app->config['SysDir'] . $this->app->config['Path']['Application'] . $nameSp[0] . '/Model/' . $nameSp[1] . '.class.php';
         include_once($path);
         $name = "\\Model\\" . str_replace("/", "\\", $name);
         $model = $this->app->container->add("Core._.Model." . $name, $name);
-        foreach ($params as $v) {
-            $model->withArgument(new \League\Container\Argument\RawArgument($v));
+        foreach ($params as $param) {
+            $model->withArgument(new RawArgument($param));
         }
-
         return $this->app->container->get("Core._.Model." . $name);
     }
 
+    /**
+     * @param array $data
+     * @param int $status
+     * @param int $pretty
+     * @return Response
+     */
     protected function json($data = [], $status = null, $pretty = 0)
     {
-
         if ($status !== null) {
             $data = [
                 "status" => $status,
                 "result" => $data
             ];
         }
-
-        $resp = json_encode(array_merge($this->data, $data), ($pretty ? JSON_PRETTY_PRINT | JSON_BIGINT_AS_STRING : JSON_BIGINT_AS_STRING));
-
+        $response = json_encode(array_merge($this->data, $data), ($pretty ? JSON_PRETTY_PRINT | JSON_BIGINT_AS_STRING : JSON_BIGINT_AS_STRING));
         if (@isset($this->app->request->data->get->jsonp)) {
-            $resp = $this->app->request->data->get->jsonp . "(" . $resp;
-            $resp .= ");";
+            $response = $this->app->request->data->get->jsonp . "(" . $response . ");";
         }
-
-        return $this->response($resp, ["content-type" => "application/json"]);
-
+        return $this->response($response, ["content-type" => "application/json"]);
     }
 
 }
