@@ -1,25 +1,33 @@
 <?php
+/**
+ * XPHP - PHP Framework
+ *
+ * This project is licensed
+ * under MIT. Please use it
+ * under the license and law.
+ *
+ * @category Framework
+ * @package  XPHP
+ * @author   Tianle Xu <xtl@xtlsoft.top>
+ * @license  MIT
+ * @link     https://github.com/xtlsoft/XPHP
+ *
+ */
+
+namespace X\Interfaces;
+
+interface Handler
+{
+
+    public function getRequest();
+
     /**
-     * XPHP - PHP Framework
-     * 
-     * This project is licensed
-     * under MIT. Please use it
-     * under the license and law.
-     * 
-     * @category Framework
-     * @package  XPHP
-     * @author   Tianle Xu <xtl@xtlsoft.top>
-     * @license  MIT
-     * @link     https://github.com/xtlsoft/XPHP
-     * 
+     * @param \X\Response $response
      */
+    public function response($response);
 
-    namespace X\Interfaces;
-
-    interface Handler {
-
-        public function getRequest();
-        public function response(\X\Response $response);
-        public function addResponseCallback(Callable $callback);
-
-    }
+    /**
+     * @param callable $callback
+     */
+    public function addResponseCallback($callback);
+}

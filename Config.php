@@ -1,13 +1,16 @@
 <?php
-    /**
-     * XPHP Configure File
-     * 
-     * You can add your providers here.
-     * 
-     */
+/**
+ * XPHP Configure File
+ *
+ * You can add your providers here.
+ *
+ */
 
-    return function ($App) {
+/**
+ * @param \X\Application $app
+ */
+return function ($app) {
 
-        $App->boot('\X\Middleware\Filter');
-        
-    };
+    $app->boot('\X\Middleware\Filter');
+
+};

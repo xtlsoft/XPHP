@@ -1,40 +1,41 @@
 {
-    "name": "xtlsoft/xphp",
-    "description": "Wonderful & high-performance PHP framework.",
-    "version": "1.0.0-alpha",
-    "type": "project",
-    "require": {
-        "php": ">=5.4",
-        "ircmaxell/filterus": "^1.0",
-        "j4mie/idiorm": "^1.5",
-        "monolog/monolog": "^1.23",
-        "league/event": "^2.1",
-        "league/container": "^2.4",
-        "filp/whoops": "^2.1",
-        "zordius/lightncandy": "^1.2",
-        "league/climate": "^3.2",
-        "xtlsoft/nondb": "dev-master"
+  "name": "xtlsoft/xphp",
+  "description": "Wonderful & high-performance PHP framework.",
+  "version": "1.0.0-alpha",
+  "type": "project",
+  "require": {
+    "php": ">=5.4",
+    "ext-json": ">=1.0",
+    "league/container": "^2.4",
+    "league/event": "^2.1",
+    "league/climate": "^3.2",
+    "ircmaxell/filterus": "^1.0",
+    "j4mie/idiorm": "^1.5",
+    "monolog/monolog": "^1.23",
+    "filp/whoops": " >=1.1",
+    "zordius/lightncandy": "^1.2",
+    "xtlsoft/nondb": "dev-master"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "X\\": "Lib/X/"
     },
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "X\\": "Lib/X/"
-        },
-        "psr-0": {
-            "": "Lib/"
-        },
-        "files": [
-            "Lib/Constant.php"
-        ]
+    "psr-0": {
+      "": "Lib/"
     },
-    "authors": [
-        {
-            "name": "Tianle Xu",
-            "email": "xtl@xtlsoft.top"
-        },
-        {
-            "name": "Dawn",
-            "email": "i@lim-light.com"
-        }
+    "files": [
+      "Lib/Constant.php"
     ]
+  },
+  "authors": [
+    {
+      "name": "Tianle Xu",
+      "email": "xtl@xtlsoft.top"
+    },
+    {
+      "name": "Dawn",
+      "email": "i@lim-light.com"
+    }
+  ]
 }

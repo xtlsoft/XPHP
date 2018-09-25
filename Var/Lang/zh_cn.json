@@ -1,19 +1,12 @@
 {
-    
-    "System" : {
-        
-        "Error" : "错误",
-        "WeHadRecordThisError" : "我们已经记录这次错误，给您带来不便，抱歉！",
-        "jumpNow" : "立即跳转",
-        "SecondsAfterAutoJump" : "秒后自动跳转",
-        "BackHome" : "返回首页"
-        
-    },
-    
-    "Index" : {
-        
-        "WelcomeTo" : "欢迎来到"
-        
-    }
-    
+  "System": {
+    "Error": "错误",
+    "WeHadRecordThisError": "我们已经记录这次错误，给您带来不便，抱歉！",
+    "jumpNow": "立即跳转",
+    "SecondsAfterAutoJump": "秒后自动跳转",
+    "BackHome": "返回首页"
+  },
+  "Index": {
+    "WelcomeTo": "欢迎来到"
+  }
 }

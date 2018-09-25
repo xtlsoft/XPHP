@@ -2,6 +2,6 @@
 XPHP {{ $version }}
 
 Basic View test.
-{{ $welcome }}
+    {{ $welcome }}
 
 </pre>
