@@ -6,6 +6,7 @@
 [![Code Climate](https://codeclimate.com/github/xtlsoft/XPHP/badges/gpa.svg)](https://codeclimate.com/github/xtlsoft/XPHP)
 [![Build Status](https://travis-ci.org/xtlsoft/XPHP.svg?branch=master)](https://travis-ci.org/xtlsoft/XPHP)
 [![MadeWithLove](https://img.shields.io/badge/Made%20with-love-yellowgreen.svg)](https://blog.xtlsoft.top)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxtlsoft%2FXPHP.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxtlsoft%2FXPHP?ref=badge_shield)
 
 Lighter, Faster, Better.
 
@@ -24,3 +25,7 @@ composer create-project xtlsoft/xphp
 ```
 
 对于中国用户，我们提供了一个高速镜像：https://git.xapps.top/xtlsoft/XPHP
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxtlsoft%2FXPHP.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxtlsoft%2FXPHP?ref=badge_large)
