@@ -10,6 +10,10 @@
 
 Lighter, Faster, Better.
 
+**As we have built https://github.com/xtlsoft/Saphon, this repository will only receive bug fixes in the future. No features will be added.**
+
+**由于 https://github.com/xtlsoft/Saphon 的开发，本项目将仅接受漏洞修复，不再添加新的功能。**
+
 ## Document 文档
 
 Now only Chinese document avaliable.
